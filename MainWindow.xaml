@@ -13,7 +13,7 @@
                     AutoGenerateColumns="False"
                     Width="200"
                     Height="200"
-                    ItemsSource="{Binding dataSource}"
+                    ItemsSource="{Binding dataSource}" Margin="0,40,32,0"
                     >
 
             <DataGrid.Columns>
@@ -27,8 +27,8 @@
                 VerticalAlignment="Bottom" 
                 Width="100" 
                 Height="21"
-                Margin="0,0,106,326" Click="Button_Click"/>
-        <Button x:Name="Load" Content="Load" HorizontalAlignment="Left" Margin="594,310,0,0" VerticalAlignment="Top" Width="106" Click="Load_Click"/>
-        <Button x:Name="Save" Content="Save" HorizontalAlignment="Left" Margin="594,272,0,0" VerticalAlignment="Top" Width="106" Click="Save_Click"/>
+                Margin="0,0,90,235" Click="Button_Click"/>
+        <Button x:Name="Load" Content="Load" HorizontalAlignment="Left" Margin="668,265,0,0" VerticalAlignment="Top" Width="84" Click="Load_Click"/>
+        <Button x:Name="Save" Content="Save" HorizontalAlignment="Left" Margin="550,265,0,0" VerticalAlignment="Top" Width="82" Click="Save_Click"/>
     </Grid>
 </Window>
