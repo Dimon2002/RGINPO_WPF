@@ -26,7 +26,9 @@
                 HorizontalAlignment="Right" 
                 VerticalAlignment="Bottom" 
                 Width="100" 
-                Height="30"
-                Margin="0,0,50,292" Click="Button_Click"/>
+                Height="21"
+                Margin="0,0,106,326" Click="Button_Click"/>
+        <Button x:Name="Load" Content="Load" HorizontalAlignment="Left" Margin="594,310,0,0" VerticalAlignment="Top" Width="106" Click="Load_Click"/>
+        <Button x:Name="Save" Content="Save" HorizontalAlignment="Left" Margin="594,272,0,0" VerticalAlignment="Top" Width="106" Click="Save_Click"/>
     </Grid>
 </Window>
