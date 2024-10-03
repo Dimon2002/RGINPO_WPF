@@ -1,6 +1,8 @@
 ﻿using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 using Microsoft.Win32;
 
 namespace RGINPO_WPF;
@@ -18,7 +20,28 @@ public partial class MainWindow : Window
         InitializeComponent();
 
         dataGridView.ItemsSource = dataSource;
+
+        dataSource.CollectionChanged += OnCollectionChanged;
+        dataGridView.CellEditEnding += OnCellEditEnding;
+        UpdateChart();
     }
+
+    private void OnCollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+    {
+        UpdateChart();
+    }
+
+    private void OnCellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+    {
+        UpdateChart();
+    }
+
+    private void UpdateChart()
+    {
+        ObservableCollection<Data> updatedDataSource = dataGridView.ItemsSource as ObservableCollection<Data>;
+        chart.UpdatePoints(updatedDataSource.ToArray());
+    }
+
     private void Button_Click(object sender, RoutedEventArgs e)
     {
         dataSource.Add(new Data(0, 0));

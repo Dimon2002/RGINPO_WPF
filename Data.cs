@@ -1,4 +1,6 @@
-﻿namespace RGINPO_WPF;
+﻿using System.Windows;
+
+namespace RGINPO_WPF;
 
 public class Data
 {
