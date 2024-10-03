@@ -33,7 +33,7 @@ namespace RGINPO_WPF
             InitializeComponent();
             _pen = new Pen(new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 0, 0)), 2);
             _drawingArea = new Rectangle(new Data(-5, -5), new Data(30, 30));
-            _componentArea = new Rectangle(new Data(10, 500), new Data(500, 10));
+            _componentArea = new Rectangle(new Data(10, 400), new Data(400, 10));
         }
 
         protected override void OnRender(DrawingContext drawingContext)
@@ -41,6 +41,9 @@ namespace RGINPO_WPF
             base.OnRender(drawingContext);
             if (_points.Length > 1)
             {
+                Rect clippingRect = new Rect(_componentArea.LeftBottom.X, _componentArea.RightTop.Y, _componentArea.Width, -_componentArea.Height);
+                drawingContext.PushClip(new RectangleGeometry(clippingRect));
+
                 StreamGeometry streamGeometry = new StreamGeometry();
 
                 using (StreamGeometryContext ctx = streamGeometry.Open())
