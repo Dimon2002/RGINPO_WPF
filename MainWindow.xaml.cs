@@ -23,6 +23,7 @@ public partial class MainWindow : Window
 
         dataSource.CollectionChanged += OnCollectionChanged;
         dataGridView.CellEditEnding += OnCellEditEnding;
+
         UpdateChart();
     }
 
