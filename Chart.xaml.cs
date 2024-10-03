@@ -32,8 +32,8 @@ namespace RGINPO_WPF
         {
             InitializeComponent();
             _pen = new Pen(new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 0, 0)), 2);
-            _drawingArea = new Rectangle(new Data(-10, -10), new Data(10, 10));
-            _componentArea = new Rectangle(new Data(0, 500), new Data(500, 0));
+            _drawingArea = new Rectangle(new Data(-5, -5), new Data(30, 30));
+            _componentArea = new Rectangle(new Data(10, 500), new Data(500, 10));
         }
 
         protected override void OnRender(DrawingContext drawingContext)
